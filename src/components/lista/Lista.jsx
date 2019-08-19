@@ -1,15 +1,10 @@
 import React from 'react';
 
-const ListaComponent = (props) => {
-  return (
-    <div>
-      {
-        props.lista.map(item => {
-          return <p key={item}>{item}</p>
-        })
-      }
-    </div>
-  );
-}
-
+const ListaComponent = ({ lista }) => (
+  <div>
+    {
+      lista.map((item) => <p key={item + Math.random() + Date.now()}>{item}</p>)
+    }
+  </div>
+);
 export default ListaComponent;
